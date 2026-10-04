@@ -23,7 +23,7 @@
   </p>
 </div>
 
-
+---
 
 **Nexus AI** is an intelligent Discord assistant built to help servers run better and give members fast, accurate answers to any question — in Albanian, English, or any other language.
 
@@ -39,6 +39,7 @@ Click the link below to add Nexus AI to your Discord server:
 
 Once invited, you can mention the bot directly or use its slash commands.
 
+---
 
 ## ✨ Features
 
@@ -51,7 +52,7 @@ Once invited, you can mention the bot directly or use its slash commands.
 - 🔄 **Automatic retry** — silently retries when the API is busy
 - 🌍 **Multilingual** — replies in the same language the user writes in
 
-
+---
 
 ## 📋 Commands
 
@@ -74,6 +75,7 @@ Shows all solution steps, not just the final answer.
 ### How `/search` works
 
 Uses a multi-source search system with automatic fallback:
+
 1. Tavily API
 2. Brave Search API
 3. SerpAPI
@@ -82,22 +84,32 @@ Uses a multi-source search system with automatic fallback:
 
 All citations are real sources — never fabricated.
 
-## 🛠️ Architecture
-┌─────────────┐ ┌──────────┐ ┌───────────┐
-│ Discord │────▶│ Nexus AI │────▶│ Gemini │
-│ User │ │ (bot) │ │ API │
-└─────────────┘ └──────────┘ └───────────┘
-│
-▼
-┌──────────────┐
-│ Web Search │
-│ (Tavily, │
-│ Brave, │
-│ Wikipedia) │
-└──────────────┘
+---
 
+## 🛠️ Architecture
 
 Nexus AI stays lightweight by centering everything around a single loop: messages come in from Discord, the model decides whether extra tools are needed (web search, server knowledge), and the response is formatted and returned.
+
+**Flow diagram:**
+Discord User
+│
+▼
+Nexus AI ──────► Google Gemini API
+│
+▼
+Web Search
+(Tavily, Brave,
+SerpAPI,
+DuckDuckGo,
+Wikipedia)
+│
+▼
+Formatted Response
+│
+▼
+Discord User
+
+
 
 ### Tech Stack
 
@@ -117,13 +129,13 @@ nexus-ai/
 └── README.md # This document
 
 
+
 ## 🔒 Privacy
 
 - Credentials are stored in environment variables, not in code
 - No personal information is stored
 - All conversations are transient
 
----
 
 ## 🤝 Contributing
 
@@ -143,6 +155,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 📞 Contact
 
 For questions or suggestions, open an **Issue** in this repository.
+
 
 <div align="center">
   <strong>Nexus AI</strong> — Your Discord assistant 🌍
