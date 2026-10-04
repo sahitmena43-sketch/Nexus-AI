@@ -91,25 +91,26 @@ All citations are real sources — never fabricated.
 Nexus AI stays lightweight by centering everything around a single loop: messages come in from Discord, the model decides whether extra tools are needed (web search, server knowledge), and the response is formatted and returned.
 
 **Flow diagram:**
+
+<pre>
 Discord User
-│
-▼
-Nexus AI ──────► Google Gemini API
-│
-▼
-Web Search
-(Tavily, Brave,
-SerpAPI,
-DuckDuckGo,
-Wikipedia)
-│
-▼
+     │
+     ▼
+  Nexus AI  ──────►  Google Gemini API
+     │
+     ▼
+  Web Search
+  (Tavily, Brave,
+   SerpAPI,
+   DuckDuckGo,
+   Wikipedia)
+     │
+     ▼
 Formatted Response
-│
-▼
+     │
+     ▼
 Discord User
-
-
+</pre>
 
 ### Tech Stack
 
@@ -121,14 +122,17 @@ Discord User
 - **Pterodactyl** — hosting panel
 
 ### Project Structure
+
+<pre>
 nexus-ai/
-├── app.py # Main bot code
-├── requirements.txt # Python dependencies
-├── config.yaml # Configuration
-├── .env # Credentials (not committed to Git)
-└── README.md # This document
+├── app.py              # Main bot code
+├── requirements.txt    # Python dependencies
+├── config.yaml         # Configuration
+├── .env                # Credentials (not committed to Git)
+└── README.md           # This document
+</pre>
 
-
+---
 
 ## 🔒 Privacy
 
@@ -136,6 +140,7 @@ nexus-ai/
 - No personal information is stored
 - All conversations are transient
 
+---
 
 ## 🤝 Contributing
 
@@ -146,16 +151,19 @@ Nexus AI is an open project. If you'd like to contribute:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
+---
 
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
+---
 
 ## 📞 Contact
 
 For questions or suggestions, open an **Issue** in this repository.
 
+---
 
 <div align="center">
   <strong>Nexus AI</strong> — Your Discord assistant 🌍
